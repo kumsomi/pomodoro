@@ -11,7 +11,10 @@ const Home=()=>{
                 <div className="para-4">Try <span>pomodoro</span> technique to focus on your important task and finish them early in your day.
                 </div>
                 <div className="para-4">
-                    <span > proFocus</span> will help you focus more by customizing your daily routine according to your need.</div>
+                    <span > proFocus</span> will help you create productive days.
+                    {/* focus more by customizing your 24hrs routine.  */}
+                    {/* according to your need. */}
+                    </div>
                 <div className="h-3">Checkout your tasks.
                     <Link to="/tasks" className="no-link link-btn">My Task</Link>
                 </div>
