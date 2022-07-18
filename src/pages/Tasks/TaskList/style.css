@@ -1,0 +1,20 @@
+.tasklist{
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--card-color);
+    color:var(--primary-color);
+}
+.task-name{
+    cursor: pointer;
+    color: var(--primary-color);
+}
+.task-name:hover{
+    color: var(--secondary-color);
+}
+.icon-btn:hover{
+    color: var(--secondary-color);
+}

@@ -1,0 +1,14 @@
+.tasks{
+    padding: 2rem;
+}
+.task-heading{
+    align-self: center;
+}
+.head{
+    display: flex;
+    /* display: grid; */
+    justify-content: space-between;   
+}
+.floating-btn:hover {
+    background-color: transparent;
+}

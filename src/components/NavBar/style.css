@@ -1,0 +1,27 @@
+.navigation-pomodoro{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(8,1fr);
+    padding: 1rem;
+    background-color:  var(--base-color);
+}
+.nav-logo{
+    color: var(--primary-color);
+    display: grid;
+    grid-column: 1/2; 
+    justify-items:center;
+    align-items: center;
+}
+.nav-link{
+    color: var(--primary-color);
+    grid-column: 8/9;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    text-decoration:underline;
+}
+.nav-link:hover{
+    text-decoration: none;
+    transform: scale(1.2);
+    /*->120% zoom in*/
+}
