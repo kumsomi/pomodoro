@@ -1,13 +1,13 @@
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import { CircularProgressbar} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import './style.css';
 import {AiFillPlayCircle} from 'react-icons/ai';
 import {AiFillPauseCircle} from 'react-icons/ai';
 // import {IoRefreshCircle} from 'react-icons/io';
 import {IoRefreshCircle} from 'react-icons/io5';
+import React from 'react';
 const Pomodoro=()=>{
     const percentage = 10;
-    const value = 0.16;
     const totalPomodoroTime=100;
     const timeLeft='8:57';
     const taskTitle='Task-title';

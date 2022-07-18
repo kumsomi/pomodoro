@@ -1,7 +1,7 @@
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import "./style.css";
-import { useState } from 'react';
+import React, { useState } from 'react';
 const TaskModal=()=>{
     const [focusTime, setFocusTime]=useState(0);
     const [breakTime, setBreakTime]=useState(0);
