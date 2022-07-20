@@ -13,15 +13,15 @@ const Task=()=>{
     usePageTitle("Task | proFocus");
     const [showModal, setShowModal]= useState(false);
     const {taskState}=useTask();
+
     const toggleTaskModal=()=>{
         setShowModal((prev)=>!prev);
-        console.log(showModal);
     }
     
     return (
         <div className="tasks">
             <h1 className="h-3">Welcome back, User!</h1>
-            <h3 className="h-4">You have {taskState.tasks.length}{taskState.tasks.length>2?` tasks`:` task`} for today</h3>
+            <h3 className="h-4">You have {taskState.tasks.length}{taskState.tasks.length>1?` tasks`:` task`} for today</h3>
             
             <div className="task-container">
                 <div className="head">

@@ -20,19 +20,18 @@ const TaskModal=({id, title="", description="", focusDuration="20", breakDuratio
         titleCount: info.title.length,
         descriptionCount: info.description.length,
     });
+
     const {taskState, taskDispatch} = useTask();
 
     //handlers to update the title and description
     const handleChange=(e)=>{
-        const {name, value}=e.target;
+        const {name, value}= e.target;
         setInfo((prevInfo)=>({...prevInfo, [name]:value}));
         setCount((prev) => ({ ...prev, [`${name}Count`]: value.length }));
     }
 
     //update task with reducer
     const handleSubmit=(e)=>{
-        console.log("btn");
-
         e.preventDefault();
         if(isEdit){
             //update the task
@@ -48,7 +47,7 @@ const TaskModal=({id, title="", description="", focusDuration="20", breakDuratio
         else{
             //add the task
             console.log("add");
-            taskDispatch({type:"ADD_TASK", payload:{...info, id:uuidv4}});
+            taskDispatch({type:"ADD_TASK", payload:{...info, id:uuidv4()}});
             toggleTaskModal();
         }
     }
