@@ -1,7 +1,7 @@
 .task-form{
     display: grid;
-    grid-template-rows: repeat(7,1fr);
-    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(6,1fr);
+    grid-template-columns: repeat(10,1fr);
     gap: 10px;
     border-radius: 0.5rem;
     padding: 2rem; 
@@ -13,8 +13,6 @@
 .task-form >input,textarea{
     background-color: var(--base-color);
     color: white; 
-    color: var(--primary-color);
-    color: aliceblue;
     font-family: monospace;
 }
 
@@ -32,35 +30,48 @@
     background-color: var(--primary-color);
     color: var(--base-color);
 }
+
 .title{
-    grid-column: 1/7;
+    grid-column: 1/10;
     grid-row: 2/3;
 }
+.title-count{
+    grid-row: 2/3;
+    grid-column: 10/11;
+}
 .task-description{
-    grid-row: 3/5;
-    grid-column: 1/7;
+    grid-row: 3/4;
+    grid-column: 1/10;
+}
+.description-count{
+    grid-row: 3/4 ;
+    grid-column: 10/11;
 }
 .focus-time{
-grid-row: 5/6;
-grid-column: 1/7;
-
+grid-row: 4/5;
+grid-column: 1/11;
 }
 .break-time{
-grid-row: 6/7;
-grid-column: 1/7;
-
-}
-.btn-cancel{
-    grid-column: 5/6;
-    grid-row: 7/8;
-    
-}
-.btn-cancel:hover{
-    background-color: var(--base-color);
-    color: var(--primary-color);
-    background-color: var(--base-color);
+grid-row: 5/6;
+grid-column: 1/11;
 }
 .btn-add{
-    grid-column: 6/7;
-    grid-row: 7/8;
+    grid-row: 6/7;
+    grid-column: 9/11;
+}
+.btn-add:disabled{
+    cursor: no-drop;
+}
+.btn-add:disabled:hover{
+    transform: scale(100%);
+    color: transparent;
+    text-shadow: 0 0 0.2rem var(--primary-color);
+}
+.btn-add:hover{
+    transform: scale(95%);
+    background-color: transparent;
+    color: var(--primary-color);
+}
+input[type="range"]{
+    width: 100%;
 }

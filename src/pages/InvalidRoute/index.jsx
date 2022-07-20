@@ -1,5 +1,8 @@
 import React from "react";
+import { usePageTitle } from "../../hooks/useDocumentTitle";
+
 const InvalidRoute=()=>{
+    usePageTitle("Invalid | proFocus");
     return(
         <div>
             {/* Invalid Route */}

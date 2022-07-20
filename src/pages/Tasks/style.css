@@ -12,3 +12,9 @@
 .floating-btn:hover {
     background-color: transparent;
 }
+.task-container{
+    background-color: var(--task-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    /* color: var(--primary-color); */
+}
