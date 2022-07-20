@@ -16,12 +16,13 @@ body{
   /* --primary-color:#3F3D56; */
   --secondary-color:white;
   --primary-color:#e5ab4f;
+  --task-color: #444156;
+
   --background-color: #555356;
   --base-color:#2F2E41;
   --cta-color: #3F3D56 ;
   --card-color:#211E2F;
   color: white;
-  font-family: monospace;
 }
 .navigation-pomodoro{
   grid-area: first;

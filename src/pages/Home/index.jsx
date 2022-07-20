@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './style.css'; 
+import { usePageTitle } from "../../hooks/useDocumentTitle";
 const Home=()=>{
+    usePageTitle("Home | proFocus");
     return (
         <div class="home-container">
             {/* <div></div> */}

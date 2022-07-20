@@ -5,8 +5,10 @@ import {AiFillPlayCircle} from 'react-icons/ai';
 import {AiFillPauseCircle} from 'react-icons/ai';
 // import {IoRefreshCircle} from 'react-icons/io';
 import {IoRefreshCircle} from 'react-icons/io5';
+import { usePageTitle } from '../../hooks/useDocumentTitle';
 import React from 'react';
 const Pomodoro=()=>{
+    usePageTitle("Pomodoro | proFocus");
     const percentage = 10;
     const totalPomodoroTime=100;
     const timeLeft='8:57';
