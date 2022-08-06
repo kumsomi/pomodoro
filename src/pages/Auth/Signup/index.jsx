@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { usePageTitle } from "../../../hooks/useDocumentTitle";
 import { useToast } from "../../../hooks/useToast";
 import "../style.css";
 const Signup=()=>{
@@ -11,6 +12,7 @@ const Signup=()=>{
 		email: "",
 		password: "",
 	};
+    usePageTitle("Signup | proFocus");
     const navigate=useNavigate();
     const {showToast}=useToast();
     const [formData, setFormData] = useState(initialFormData);

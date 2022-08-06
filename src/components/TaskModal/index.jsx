@@ -4,6 +4,7 @@ import {GiCancel} from "react-icons/gi";
 import React, { useState } from 'react';
 import {v4 as uuidv4} from "uuid";
 import { useTask } from '../../context/task-context';
+import { useToast } from "../../hooks/useToast";
 
 const TaskModal=({id, title="", description="", focusDuration="20", breakDuration="5", isEdit, setIsEdit, toggleTaskModal})=>{
     
@@ -30,6 +31,7 @@ const TaskModal=({id, title="", description="", focusDuration="20", breakDuratio
         setInfo((prevInfo)=>({...prevInfo, [name]:value.trim(" ")}));
         setCount((prev) => ({ ...prev, [`${name}Count`]: value.trim(" ").length }));
     }
+    const {showToast}=useToast();
 
     //update task with reducer
     const handleSubmit=(e)=>{
@@ -43,12 +45,14 @@ const TaskModal=({id, title="", description="", focusDuration="20", breakDuratio
                 return item;
             });
             taskDispatch({type:"UPDATE_TASK", payload:updatedTasks});
+            showToast("Task Updated");
             setIsEdit(false);
         }
         else{
             //add the task
             // console.log("add");
             taskDispatch({type:"ADD_TASK", payload:{...info, id:uuidv4()}});
+            showToast("Task added");
             toggleTaskModal();
         }
     }

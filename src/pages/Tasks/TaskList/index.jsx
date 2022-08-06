@@ -7,6 +7,7 @@ import {MdDeleteOutline} from "react-icons/md";
 import { Link } from "react-router-dom";
 import { TaskModal } from "../../../components/TaskModal";
 import { useTask } from "../../../context/task-context";
+import { useToast } from "../../../hooks/useToast";
 // import { useState } from "react";
 // import { TaskModal } from "../TaskModal";
 import "./style.css";
@@ -22,14 +23,18 @@ const TaskList=({task})=>{
     const handleTaskEdit = () => {
         setIsEdit((edit) => !edit);
     };
-
+    const {showToast}=useToast();
     return(
     <div key={task.id}>  
     <div className="tasklist">
         <Link className="para-4 no-link task-name" to="/pomodoro" state={{pomodoroTask:task}}>{`${title} : ${description}`}</Link>
         <div>
             <span class="icon-btn para-4" onClick={()=>handleTaskEdit(task.id)}><BiEditAlt/></span>
-            <span class="icon-btn para-4" onClick={()=>taskDispatch({type:"DELETE_TASK", payload:{id:task.id}})}><MdDeleteOutline/></span>
+            <span class="icon-btn para-4" onClick={()=>{
+                taskDispatch({type:"DELETE_TASK", payload:{id:task.id}})
+                showToast("task deleted successfully");}
+                }
+                ><MdDeleteOutline/></span>
         </div>
     </div>
     {isEdit && (<TaskModal id={id} title={title} description={description} focusDuration={focusDuration} breakDuration={breakDuration} isEdit={isEdit} setIsEdit={setIsEdit} />)} 

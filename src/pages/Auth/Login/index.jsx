@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTask } from "../../../context/task-context";
+import { usePageTitle } from "../../../hooks/useDocumentTitle";
 import { useToast } from "../../../hooks/useToast";
 import "../style.css";
 const Login=()=>{
     const initialFormData = {
-        // firstname:"",
-        // lastname:"",
 		email: "",
 		password: "",
 	};
+    usePageTitle("Login | proFocus");
     const navigate=useNavigate();
     const {showToast}=useToast();
 
@@ -20,16 +20,17 @@ const Login=()=>{
         const {name, value}=event.target;
         setFormData((prevData)=>({...prevData,[name]:value}));
     }
+    // const {userEmail, userPassword, isAuth}=useAuth();
     const handleFormSubmit=(event)=>{
         event.preventDefault();
 
         const user=JSON.parse(localStorage.getItem('pomodoro-user'));
         const userEmail= user.email;
-        const userPassword=user.password
-        console.log(user.email, user.password);
+        const userPassword=user.password;
+        // console.log(user.email, user.password);
         if(userEmail===email){
-            console.log("same");
             if(userPassword===password){
+                // isAuth=true;
                 showToast("User logged in successfully", "success");
                 navigate("/tasks");
             }
