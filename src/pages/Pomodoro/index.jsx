@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState}  from 'react';
-import { useLocation, useNavigate} from "react-router-dom";
+import { useLocation, useNavigate, Link} from "react-router-dom";
 import { usePageTitle } from '../../hooks/useDocumentTitle';
 
 import { CircularProgressbar} from 'react-circular-progressbar';
@@ -91,6 +91,7 @@ const Pomodoro=()=>{
     return(
         <>
         <div className='pomodoro'>
+          <Link to="/tasks" className="no-link link-btn">Return to tasks</Link>
             <div className='h-3 pomodoro-title'>{title}</div>
             <CircularProgressbar 
             className="circular-progress" 
