@@ -17,10 +17,11 @@ const Task=()=>{
     const toggleTaskModal=()=>{
         setShowModal((prev)=>!prev);
     }
-    
+    const user=JSON.parse(localStorage.getItem('pomodoro-user'));
+    const userName= user.firstname;
     return (
         <div className="tasks">
-            <h1 className="h-3">Welcome back, User!</h1>
+            <h1 className="h-3">Welcome back, {userName}!</h1>
             <h3 className="h-4">You have {taskState.tasks.length}{taskState.tasks.length>1?` tasks`:` task`} for today</h3>
             
             <div className="task-container">

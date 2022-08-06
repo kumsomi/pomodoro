@@ -14,12 +14,12 @@ const Home=()=>{
                 </div>
                 <div className="para-4">
                     <span > proFocus</span> will help you create productive days.
-                    {/* focus more by customizing your 24hrs routine.  */}
-                    {/* according to your need. */}
+                    
                     </div>
-                <div className="h-3">Checkout your tasks.
-                    <Link to="/tasks" className="no-link link-btn">My Task</Link>
+                <div className="h-3"> 
+                    <Link to="/login" className="no-link link-btn">Login</Link> to Check your tasks.
                 </div>
+                {/* <Link to="/login">Login</Link> */}
             </div>
         </div>
     )

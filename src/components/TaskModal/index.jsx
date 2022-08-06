@@ -15,6 +15,7 @@ const TaskModal=({id, title="", description="", focusDuration="20", breakDuratio
         breakDuration,
     });
 
+    
     //counting titleCount and descriptionCount
     const [count, setCount] = useState({
         titleCount: info.title.length,
@@ -25,9 +26,9 @@ const TaskModal=({id, title="", description="", focusDuration="20", breakDuratio
 
     //handlers to update the title and description
     const handleChange=(e)=>{
-        const {name, value}= e.target;
-        setInfo((prevInfo)=>({...prevInfo, [name]:value}));
-        setCount((prev) => ({ ...prev, [`${name}Count`]: value.length }));
+        const {name, value}= e.target; 
+        setInfo((prevInfo)=>({...prevInfo, [name]:value.trim(" ")}));
+        setCount((prev) => ({ ...prev, [`${name}Count`]: value.trim(" ").length }));
     }
 
     //update task with reducer
@@ -46,7 +47,7 @@ const TaskModal=({id, title="", description="", focusDuration="20", breakDuratio
         }
         else{
             //add the task
-            console.log("add");
+            // console.log("add");
             taskDispatch({type:"ADD_TASK", payload:{...info, id:uuidv4()}});
             toggleTaskModal();
         }
@@ -93,7 +94,8 @@ const TaskModal=({id, title="", description="", focusDuration="20", breakDuratio
                     !info.title || 
                     !info.description ||
                     count.titleCount<3||
-                    count.descriptionCount<5
+                    count.descriptionCount<5 
+                    
                 }
             >
                 {isEdit?"Update":"Add"}
