@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useToast } from "../../../hooks/useToast";
@@ -29,12 +30,12 @@ const Signup=()=>{
         }
         )
     }
+    useEffect(()=>{
+        localStorage.setItem('pomodoro-user',JSON.stringify(formData));
+    })
     const handleFormSubmit=(event)=>{
         event.preventDefault();
-        localStorage.setItem('pomodoro-user',JSON.stringify(formData));
         showToast("User signed in successfully", "success");
-        // console.log(formData);
-        // console.log(formData.firstname);
         navigate("/login");
     }
 
@@ -116,12 +117,12 @@ const Signup=()=>{
             <input 
                 type="submit"
                 // disabled={isLoggingIn}
-				value="Login"
+				value="Signup"
                 className="btn primary-btn login-btn"
             />
             <input 
                 type="submit"
-                value="Login with Test Credentials"
+                value="Sign up with Test Credentials"
                 // disabled={isLoggingIn}
                 onClick={handleLoginWithTestCredentials} 
                 className="btn secondary-btn login-btn"
